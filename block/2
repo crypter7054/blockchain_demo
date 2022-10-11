@@ -1,0 +1,10 @@
+{
+    "pemilik": "Yos",
+    "penyewa": "Soy",
+    "location": "107 S Oak St #458, Sheridan, Arkansas 72150, USA",
+    "harga": 100,
+    "prev_block": {
+        "hash": "410c13ee820194d4e5439eb2b804a2d308464307f6b4bd359d8a5f949a0ba58c",
+        "filename": "1"
+    }
+}

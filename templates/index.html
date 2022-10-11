@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Blockchain - Real Estate</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mx-auto mt-5">
+                <h1 class="mb-5">Blockchain - Real Estate</h1>
+
+                <form action="{{ url_for('index') }}" method="POST">
+                    <label for="pemilik" class="form-label">Pemilik</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Nama</span>
+                        <input type="text" class="form-control" id="pemilik" aria-describedby="basic-addon3" name="pemilik">
+                    </div>
+                    <label for="penyewa" class="form-label">Penyewa</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Nama</span>
+                        <input type="text" class="form-control" id="penyewa" aria-describedby="basic-addon3" name="penyewa">
+                    </div>
+                    <label for="lokasi" class="form-label">Lokasi</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Alamat</span>
+                        <input type="text" class="form-control" id="lokasi" aria-describedby="basic-addon3" name="lokasi">
+                    </div>
+                    <label for="harga" class="form-label">Harga</label>
+                        <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Rp.</span>
+                    <input type="text" class="form-control" id="harga" aria-describedby="basic-addon3" name="">
+                    </div>
+
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mx-auto mt-5 mb-5 text-center">
+                <form action="{{ url_for('check') }}", class="mb-3">
+                    <button class="btn btn-outline-info">Cek Data</button>
+                </form>
+
+                {% for res in checking_results %}
+
+                    <div>
+                        Block {{ res['block'] }} : {{ res['result'] }}
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
